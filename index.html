@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boitumelo Thobejane Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --background-light: #ffffff;
+            --text-light: #595e6c;
+            --highlight-light: #cf35cf;
+            --button-light: #45475a;
+            --button-hover-light: #cf35cf;
+            --cursor-color: #cf35cf;
+            
+            --background-dark: #1e1e2e;
+            --text-dark: #cdd6f4;
+            --highlight-dark: #f5a9f7;
+            --button-dark: #2f2b2b;
+            --button-hover-dark: #f5a9f7;
+        }
+        body {
+            color: #595e6c;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        body {
+            background-color: var(--background-light);
+            color: var(--text-light);
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .terminal-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--highlight-light);
+            margin-bottom: 20px;
+        }
+        .cursor {
+            display: inline-block;
+            width: 2.5px;
+            height: 24px;
+            background-color: var(--cursor-color);
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .dark-mode {
+            background-color: var(--background-dark);
+            color: var(--text-dark);
+        }
+        .dark-mode .terminal-header {
+            color: var(--highlight-dark);
+        }
+        .dark-mode .cursor {
+            background-color: var(--highlight-dark);
+        }
+        .dark-mode-toggle {
+         position: absolute;
+         top: 20px;
+         right: 50px;
+         background: none;
+         border: none;
+         font-size: 24px;
+         cursor: pointer;
+}
+
+        .content {
+            max-width: 600px;
+            margin: auto;
+        }
+        .section {
+            margin: 15px 0;
+        }
+        .btn-toggle {
+            display: block;
+            background-color: #45475a;
+            color: #cdd6f4;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-align: left;
+            cursor: pointer;
+        }
+        .btn-toggle:hover {
+            background-color: #cf35cf;
+            color: #1e1e2e;
+        }
+        .content-section {
+            display: none;
+            padding: 10px;
+            text-align: left;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+        .content-section h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .content-section p {
+            font-size: 16px;
+        }
+        .highlight {
+            color: #cf35cf;
+        }
+
+        .project-heading {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-style {
+            color: #cf35cf;
+            font-size: 20px;
+        }
+
+        .btn{
+            background-color: #cf35cf;
+            color: #1e1e2e;
+        }
+
+        .container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 10px;
+         padding: 20px;
+        }
+
+        li::marker {
+    color:  #cf35cf; 
+    font-size: 20px; 
+  }
+
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    <div class="terminal-header">
+        <span class="typing-container" id="typing-text"></span><span class="cursor"></span>
+    </div>
+    
+    <div class="content">
+        <p id="greeting" class="fade-text">Hello, my name's <strong>Boitumelo</strong>.</p>
+        <p>
+            I am a <strong>Mobile (Flutter) Developer</strong> with <span class="timer" id="timer" style="color: #cf35cf"></span></span> of experince and a <strong>GDG organizer</strong>, with expertise in mobile development, Firebase, and software architecture. Passionate about tech community building, mentorship, and advancing problem-solving skills in mobile app development.
+        </p>
+
+        <div class="section">
+            <div class="btn-toggle" onclick="toggleSection('background')">💻 Career Background</div>
+            <div id="background" class="content-section">
+                <h3>SRC President</h3>
+                <p class="highlight">2019 - 2020</p>
+                <p>Led campus initiatives, student affairs, and served as an official spokesperson of the SRC.</p>
+                <h3>Intern</h3>
+                <p class="highlight">2022-2023</p>
+                <p>Assisted in software development, testing, and debugging mobile applications.</p>
+                
+                <h3>Mobile Developer</h3>
+                <p class="highlight">2023 - Present</p>
+                <p>Developed mobile applications using Flutter, Firebase, and modern UI/UX principles.</p>
+
+                <h3>GDG organizer</h3>
+                <p class="highlight">2024 - Present</p>
+                <p>Organized events, hackathons, and workshops focused on Android, Flutter, and AI technologies.</p>
+            </div>
+        </div>
+        
+        
+        <div class="section">
+            <div class="btn-toggle" onclick="toggleSection('projects')">📂 Projects</div>
+            <div id="projects" class="content-section">
+                <h3 class="project-heading"></i> Mobile Developer (9-5 Role) <i class='bx bxl-flutter icon-style me-2'></i><i class='bx bxl-firebase  icon-style me-2'></i> <i class='bx bxl-github icon-style me-2'></i></h3>
+                <p>As a Mobile Developer specializing in Flutter, I design and build scalable, secure, and user-centric mobile applications. My work includes Clean Architecture, real-time MQTT-based updates, BLoC state management, biometric authentication, and enhancing UI/UX with custom animations and overlays.</p>
+                <h3>Digital Footprint Awareness Website  <i class='bx bxl-html5  icon-style me-2'></i><i class='bx bxl-css3  icon-style me-2'></i> <i class='bx bxl-javascript  icon-style me-2'></i></h3>
+                <p>An interactive website educating users on managing their digital footprint.</p>
+                <h3 class="project-heading">Virtual Business Card App  <i class='bx bxl-flutter  icon-style me-2'></i><i class='bx bxl-firebase  icon-style me-2'></i><i class='bx bxl-github  icon-style me-2'></i></h3>
+                <p>A Flutter app for creating and sharing digital business cards using QR codes.</p>
+                <h3 class="project-heading">Learning Management App  <i class='bx bxl-flutter  icon-style me-2'></i><i class='bx bxl-firebase  icon-style me-2'></i><i class='bx bxl-github  icon-style me-2'></i></h3>
+                <p>An AI-powered learning management system that helps users organize their academics, track progress, and receive intelligent study recommendations.</p>
+                
+               
+                
+                <div class="d-flex justify-content-center mt-5">
+                    <img src="https://ghchart.rshah.org/Boitumelo29" alt="GitHub Contribution Graph" class="img-fluid">
+                </div>
+                
+                <div class="text-center mt-3">
+                    <a href="https://github.com/Boitumelo29" target="_blank" class="btn">View My GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="btn-toggle" onclick="toggleSection('techstack')"> 👩‍💻 Tech Stack</div>
+            <div id="techstack" class="content-section">
+                <div class="container">
+                    <i class='bx bxl-flutter logos flutter icon-style me-2'></i>
+                    <i class='bx bxl-java logos java icon-style me-2'></i>
+                    <i class='bx bxl-html5 logos html icon-style me-2'></i>
+                    <i class='bx bxl-css3 logos css icon-style me-2'></i>
+                    <i class='bx bxl-javascript logos js icon-style me-2'></i>
+                    <i class='bx bxl-firebase logos firebase icon-style me-2'></i>
+                    <i class='bx bxl-git logos git icon-style me-2'></i>
+                    <i class='bx bx-data  icon-style me-2'></i>
+                </div>
+
+                <ul>
+                    <li style="">Flutter</li>
+                    <li>Swift</li>
+                    <li>Java</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JS</li>
+                    <li>Firebase</li>
+                    <li>Git</li>
+                    <li>Jira</li>
+                    <li>SQL</li>
+                    <li>Bitbucket</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="btn-toggle" onclick="toggleSection('education')">📚 Education</div>
+            <div id="education" class="content-section">
+                <h3>Higher Certificate - NQF 5</h3>
+                <p class="highlight">Eduvos</p>
+                <h3>BSc Information Technology - NQF 7 </h3>
+                <p class="highlight">Eduvos</p>
+                <h3>Mobile Development 6 Months Training</h3>
+                <p class="highlight">IACD</p>
+                <h3>BSc Honours in Computing - NQF 8</h3>
+                <p class="highlight">University of South Africa</p>
+                <h3>Postgraduate Diploma in Management - NQF 8</h3>
+                <p class="highlight">North-West University</p>
+            </div>
+        </div>
+        <p>For a complete CV with more details, contact me at <a href="mailto:tumijane99@gmail.com">tumijane99@gmail.com</a>.</p>
+        <div class="social">
+            <a href = "https://www.linkedin.com/in/boitumelo-t-009b6314a"><i class='bx bxl-linkedin'></i></a>
+               <a href = "https://github.com/Boitumelo29"><i class='bx bxl-github'></i></a>
+         </div>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.style.display = (section.style.display === "block") ? "none" : "block";
+        }
+        const text = "boitumelo@me:~$ ";
+        let i = 0;
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", typeEffect);
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const toggleButton = document.querySelector(".dark-mode-toggle");
+            if (document.body.classList.contains("dark-mode")) {
+                toggleButton.innerHTML = "☀️";
+            } else {
+                toggleButton.innerHTML = "🌙";
+            }
+            localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
+        }
+
+        if (localStorage.getItem("dark-mode") === "true") {
+            document.body.classList.add("dark-mode");
+            document.querySelector(".dark-mode-toggle").innerHTML = "☀️";
+        }
+
+        const greetings = [
+            "Hello, my name is <strong>Boitumelo</strong>",
+            "Hallo, my naam is <strong>Boitumelo</strong>",
+            "Leina laka ke <strong>Boitumelo</strong>",
+            "Igama lami ngu <strong>Boitumelo</strong>",
+            "Hola, me llamo <strong>Boitumelo</strong>",
+            "Bonjour, je m'appelle <strong>Boitumelo</strong>"
+        ];
+        
+        let index = 0;
+        const greetingElement = document.getElementById("greeting");
+        
+        function changeGreeting() {
+            greetingElement.style.opacity = 0;
+            setTimeout(() => {
+                greetingElement.innerHTML = greetings[index];
+                greetingElement.style.opacity = 1;
+                index = (index + 1) % greetings.length;
+            }, 500);
+        }
+        setInterval(changeGreeting, 4000);
+
+          function updateTimer() {
+            const startDate = new Date("2022-08-01");
+            const today = new Date();
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById("timer").textContent = `${diffDays} days`;
+        }
+        updateTimer();
+    </script>
+</body>
+</html>
